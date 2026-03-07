@@ -267,14 +267,6 @@ Without copying data.
 
 ---
 
-## Latency Comparison
-
-Vector databases and GraphRAG have different performance characteristics.
-
-| Query Type | Vector RAG | GraphRAG |
-|------------|------------|----------|
-| Simple document retrieval | ~0.8 seconds | ~1.2 seconds |
-| Multi-hop relational queries | ~0.9 seconds | ~2.4 seconds |
 
 ## Latency Comparison: Vector RAG vs GraphRAG
 
@@ -287,58 +279,29 @@ Vector databases and GraphRAG have different performance characteristics for dif
 | *Semantic relationship queries* | ~1.1 seconds* | ~1.8 seconds* | Vector RAG still faster | 🏆 **Vector RAG** |
 | *Complex graph traversals* | ~2.3 seconds* | ~1.6 seconds* | GraphRAG wins for deep graph queries | 🏆 **GraphRAG** |
 
+GraphRAG can be slower because it requires:
+
+- graph traversal
+
+- multi-source queries
+
+- query planning
+
+However, it provides much higher accuracy for relational queries.
+
 *Projected based on architectural characteristics*
 
-## Key Insights
+#### Key Insights
 1. **Vector RAG consistently outperforms** GraphRAG for most query types (30-60% faster)
 2. **Simple retrievals** favor vector-based approaches due to optimized similarity search
 3. **Multi-hop queries** show the largest gap as vector embeddings capture relationships implicitly
 4. **GraphRAG only excels** when deep relationship traversals are the primary query pattern
 5. **Query pattern selection** should drive architectural choice
 
-## Architectural Implications
-
-┌─────────────────────────────────────────────────────────────────┐
-│ Query Type Analysis │
-├─────────────────────────────────────────────────────────────────┤
-│ Simple Retrieval: Vector (0.8s) → Graph (1.2s) │
-│ Multi-hop: Vector (0.9s) → Graph (2.4s) │
-│ Complex Traversal: Vector (2.3s) → Graph (1.6s) │
-│ (slower) (faster) │
-└─────────────────────────────────────────────────────────────────┘
-
-
-## Recommendation Based on Query Patterns
+#### Recommendation Based on Query Patterns
 - **Choose Vector RAG if:** Most queries are semantic search or multi-hop questions
 - **Choose GraphRAG if:** Queries require deep relationship exploration (social networks, knowledge graphs)
 - **Hybrid approach:** Use Vector RAG for fast retrieval, augment with graph for relationship mapping
-
-Alternative with visual timeline representation:
-
-markdown
-## Latency Comparison: Vector RAG vs GraphRAG
-
-Vector databases and GraphRAG have different performance characteristics.
-
-### Performance Metrics
-
-| Query Type | Vector RAG | GraphRAG | Gap |
-|------------|------------|----------|-----|
-| **Simple document retrieval** | 0.8s ⚡ | 1.2s 🐢 | +0.4s (33% slower) |
-| **Multi-hop relational queries** | 0.9s ⚡ | 2.4s 🐢 | +1.5s (62% slower) |
-
-### Visual Latency Comparison
-Simple Retrieval:
-Vector RAG: [===== 0.8s =====]
-GraphRAG: [========== 1.2s ==========]
-
-Multi-hop Queries:
-Vector RAG: [====== 0.9s ======]
-GraphRAG: [================ 2.4s ================]
-
-
-
-### Performance Analysis
 
 **Vector RAG Advantages:**
 - Optimized similarity search algorithms
@@ -355,17 +318,64 @@ GraphRAG: [================ 2.4s ================]
 - **Relationship-intensive applications:** Consider GraphRAG or hybrid approach
 - **Balanced workloads:** Vector RAG with graph augmentation layer
 
-## Latency Comparison: Vector RAG vs GraphRAG
+---
 
-Vector databases and GraphRAG have different performance characteristics.
+## When Each Architecture Works Best for Enterprise Applications 
 
-### Performance Metrics
+### Vector Database RAG
 
-| Query Type | Vector RAG | GraphRAG | Gap |
-|------------|------------|----------|-----|
-| **Simple document retrieval** | 0.8s ⚡ | 1.2s 🐢 | +0.4s (33% slower) |
-| **Multi-hop relational queries** | 0.9s ⚡ | 2.4s 🐢 | +1.5s (62% slower) |
+Best for:
+```python
+Customer support chatbots
+FAQ systems
+Document search
+Knowledge bases
+```
 
-### Visual Latency Comparison
+Example query:
+
+```python
+                What are the tax implications of early retirement withdrawals?
+```
+
+Vector search works well for text retrieval.
+
+### GraphRAG
+
+Best for:
+
+```python
+Enterprise data analysis
+Fraud detection
+Regulatory compliance
+Multi-database reasoning
+```
+
+Example query:
+
+```python
+                   Which clients with offshore accounts also triggered AML alerts last year?
+```
+
+This requires multi-hop relationships.
+
+### Hybrid Architecture
+
+Many enterprises combine both.
+
+Architecture:
+```python
+Vector Search → Retrieve Documents
+GraphRAG → Reason Over Relationships
+LLM → Final Answer
+```
+
+Example use case:
+
+Regulatory investigation reports
+
+Vector search retrieves documents while GraphRAG identifies relevant entities.
+
+
 
 
