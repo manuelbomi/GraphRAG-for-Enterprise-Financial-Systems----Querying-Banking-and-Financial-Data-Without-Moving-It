@@ -165,4 +165,34 @@ Connectors = data access
 LLM = reasoning engine
 ```
 
+## How Connectors Enable Secure Access
+
+Instead of copying data, the system uses connectors to query source systems.
+
+Example connectors:
+```python
+SQL connectors
+API connectors
+GraphQL endpoints
+Data warehouse connectors
+Document store connectors
+```
+
+Example architecture:
+
+```python
+                  Knowledge Graph
+                        │
+                        │
+        ┌───────────────┼────────────────┐
+        ▼               ▼                ▼
+   Oracle DB       Snowflake        SharePoint
+ (Transactions)     (Finance)        (Documents)
+        │               │                │
+        └───────────────┴────────────────┘
+                        │
+                        ▼
+                  LLM Reasoning
+```
+
 
