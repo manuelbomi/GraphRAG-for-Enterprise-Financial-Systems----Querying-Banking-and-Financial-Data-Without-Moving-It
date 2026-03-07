@@ -33,6 +33,8 @@ The architecture is particularly relevant for:
 
 - Regulated enterprise environments
 
+We motivate the discussion from the need for GraphRAG for such enterprise applications, and we gave some examples including its application in banking account reconciliation and fraud investigation. 
+
 ---
 ## The Enterprise Problem
 
