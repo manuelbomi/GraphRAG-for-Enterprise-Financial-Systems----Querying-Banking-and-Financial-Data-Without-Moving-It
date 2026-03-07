@@ -157,4 +157,12 @@ CRM Database   Transaction DB   Loan System   Compliance DB
                 LLM Answer
 ```
 
+Key concept:
+
+```python
+Graph = data relationships
+Connectors = data access
+LLM = reasoning engine
+```
+
 
