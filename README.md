@@ -1,7 +1,7 @@
 # GraphRAG for Enterprise Financial Systems:   <sub>  Querying Banking and Financial Data Without Moving It</sub>
 ---
 
-### Overview
+## Overview
 
 Financial institutions such as banks, investment firms, and tax authorities operate under strict data governance, privacy, and regulatory requirements. In many cases:
 
@@ -16,3 +16,33 @@ Financial institutions such as banks, investment firms, and tax authorities oper
 Traditional vector database based Retrieval Augmented Generation (RAG) architectures often require copying data to generate embeddings. This violates many enterprise policies.
 
 This repository describes a **GraphRAG-based federated architecture** designed for enterprise environments where:
+
+- Data must remain inside source systems
+
+- AI systems query multiple databases through connectors
+
+- Relationships between data sources must be preserved
+
+The architecture is particularly relevant for:
+
+- Banking systems
+
+- Financial services platforms
+
+- Tax and revenue agencies
+
+- Regulated enterprise environments
+
+---
+## The Enterprise Problem
+
+A typical financial institution has dozens of databases:
+
+```python
+Customer Database
+Transaction Database
+Fraud Detection System
+Loan Management System
+Compliance Database
+Document Management Systems
+```
