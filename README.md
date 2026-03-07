@@ -197,4 +197,32 @@ Example architecture:
                   LLM Reasoning
 ```
 
+## Banking Example: Account Reconciliation
+
+A common banking workflow is account reconciliation.
+
+Example question:
+```python
+                 Why did account balances not reconcile between the ledger and transaction system?
+```
+
+Relevant data sources:
+
+- General Ledger Database
+- Transaction Processing System
+- Settlement System
+- Audit Logs
+
+Graph relationships:
+
+```python
+Account
+   │
+   ├── has_transactions → Transaction DB
+   │
+   ├── recorded_in → Ledger DB
+   │
+   └── audited_by → Compliance System
+```
+
 
