@@ -376,6 +376,58 @@ Regulatory investigation reports
 
 Vector search retrieves documents while GraphRAG identifies relevant entities.
 
+---
+
+## Federated Architecture
+
+For the most restricted environments.
+
+```python
+LLM
+ │
+ ▼
+Query Planner
+ │
+ ▼
+Knowledge Graph
+ │
+ ▼
+Connectors
+ │
+ ▼
+Source Databases
+```
+
+Key property:
+```python
+Data never leaves source systems
+```
+
+This is common in:
+
+- banking
+
+- government
+
+- healthcare
+
+- tax authorities
+
+#### Example Federated Query
+
+User question:
+```python
+             Which accounts exceeding $5M were flagged in AML reports last quarter?
+```
+
+Execution plan:
+
+1. Query account balances from finance DB
+2. Query AML alerts from compliance DB
+3. Join results
+4. retrieve supporting documents
+5. summarize
+
 
 
 
