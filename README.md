@@ -91,4 +91,16 @@ This can violate:
 
 Even embeddings may be considered derived data.
 
+#### <ins>Problem 2</ins>. Security Concerns
+
+If a centralized vector database stores embeddings derived from:
+
+transaction histories
+
+loan documents
+
+tax filings
+
+then sensitive information may be indirectly exposed.
+
 
