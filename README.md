@@ -46,3 +46,22 @@ Loan Management System
 Compliance Database
 Document Management Systems
 ```
+
+These systems often reside in different environments:
+
+- Oracle databases
+
+- Snowflake data warehouses
+
+- document stores
+
+- internal APIs
+
+- mainframes
+
+Data governance policies may require that:
+
+```python
+Customer financial data must remain in its original database.
+AI systems may query data but cannot replicate it.
+```
