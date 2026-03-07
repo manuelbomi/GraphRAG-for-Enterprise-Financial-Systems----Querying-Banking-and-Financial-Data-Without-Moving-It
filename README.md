@@ -103,4 +103,14 @@ If a centralized vector database stores embeddings derived from:
 
 then sensitive information may be indirectly exposed.
 
+#### <ins>Problem 3</ins>: Schema Awareness Problems
+
+Vector search focuses on semantic similarity, not relationships.
+
+Many financial queries require relational reasoning such as:
+
+*"Which customers with loans above $1M had suspicious transactions last quarter?"*
+
+This requires joining multiple datasets.
+
 
