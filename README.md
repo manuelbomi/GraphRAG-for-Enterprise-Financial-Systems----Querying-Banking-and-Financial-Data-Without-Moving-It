@@ -425,8 +425,47 @@ Execution plan:
 1. Query account balances from finance DB
 2. Query AML alerts from compliance DB
 3. Join results
-4. retrieve supporting documents
-5. summarize
+4. Retrieve supporting documents
+5. Summarize
+
+---
+
+### Advantages of GraphRAG in Financial Systems
+#### Data Governance Compliance
+
+*Sensitive data remains inside source systems.*
+
+#### Cross-System Reasoning
+
+*Graph relationships enable queries spanning multiple databases.*
+
+#### Improved Explainability
+
+*Graph paths provide reasoning chains.*
+
+##### Example explanation:
+
+```python
+Customer → Account → Transaction → Fraud Alert
+```
+
+#### Reduced Data Duplication
+
+*No central replication of sensitive financial records.*
+
+#### Potential Limitations
+
+*GraphRAG systems introduce complexity.*
+
+Challenges include:
+
+- Graph construction
+- Schema mapping
+- Connector management
+- Query planning
+- Latency overhead
+
+<ins>However, due to their peculiarities, these tradeoffs are often acceptable for regulated industries.</ins>
 
 
 
