@@ -114,4 +114,20 @@ Many financial queries require relational reasoning such as:
 
 This requires joining multiple datasets.
 
+---
+
+## GraphRAG for Enterprise Systems
+
+GraphRAG introduces a knowledge graph layer that maps relationships between data entities and data sources.
+
+Instead of storing documents, the system stores:
+```python
+Entities
+Relationships
+Metadata
+Data source locations
+```
+
+The actual data remains inside its original database.
+
 
