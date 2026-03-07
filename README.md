@@ -130,4 +130,31 @@ Data source locations
 
 The actual data remains inside its original database.
 
+---
+
+## Enterprise GraphRAG Architecture
+
+```python
+User Query
+    │
+    ▼
+LLM Query Planner
+    │
+    ▼
+Enterprise Knowledge Graph
+    │
+    ├───────────────┬───────────────┬───────────────┐
+    ▼               ▼               ▼               ▼
+CRM Database   Transaction DB   Loan System   Compliance DB
+(Connector)    (Connector)      (Connector)   (Connector)
+    │               │               │               │
+    └───────────────┴───────────────┴───────────────┘
+                    │
+                    ▼
+             Aggregated Results
+                    │
+                    ▼
+                LLM Answer
+```
+
 
