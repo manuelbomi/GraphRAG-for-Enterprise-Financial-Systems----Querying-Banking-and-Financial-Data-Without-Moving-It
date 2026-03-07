@@ -77,7 +77,7 @@ Documents → Chunking → Embeddings → Vector Database
 
 This creates several problems:
 
-#### <ins>Problem 1</ins>. Data Replication
+#### <ins>Problem 1</ins>: Data Replication
 
 Generating embeddings requires copying text from source systems.
 
@@ -91,15 +91,15 @@ This can violate:
 
 Even embeddings may be considered derived data.
 
-#### <ins>Problem 2</ins>. Security Concerns
+#### <ins>Problem 2</ins>: Security Concerns
 
 If a centralized vector database stores embeddings derived from:
 
-transaction histories
+- transaction histories
 
-loan documents
+- loan documents
 
-tax filings
+- tax filings
 
 then sensitive information may be indirectly exposed.
 
