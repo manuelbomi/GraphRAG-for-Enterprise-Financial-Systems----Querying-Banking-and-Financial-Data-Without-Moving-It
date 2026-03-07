@@ -65,3 +65,30 @@ Data governance policies may require that:
 Customer financial data must remain in its original database.
 AI systems may query data but cannot replicate it.
 ```
+---
+
+## Why Traditional Vector RAG May Fail in Regulated Systems
+
+Typical vector RAG pipelines require:
+
+```python
+Documents → Chunking → Embeddings → Vector Database
+```
+
+This creates several problems:
+
+#### <ins>Problem 1</ins>. Data Replication
+
+Generating embeddings requires copying text from source systems.
+
+This can violate:
+
+- banking privacy regulations
+
+- financial compliance rules
+
+- internal data governance policies
+
+Even embeddings may be considered derived data.
+
+
