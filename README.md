@@ -109,7 +109,7 @@ Vector search focuses on semantic similarity, not relationships.
 
 Many financial queries require relational reasoning such as:
 
-*"Which customers with loans above $1M had suspicious transactions last quarter?"*
+*                           "Which customers with loans above $1M had suspicious transactions last quarter?"*
 
 This requires joining multiple datasets.
 
