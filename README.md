@@ -494,7 +494,7 @@ Typical implementations use:
   
 <ins>Data Connectors</ins>
 - JDBC
-- MCP (Model Context Protocols)
+- MCP (Model Context Protocol)
 - REST APIs
 - internal microservices
 - data warehouse connectors
